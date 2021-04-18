@@ -390,7 +390,7 @@ func (c *Client) init(o *Options) error {
 					"xmlns:auth='%s'>%s</auth>\n", nsSASL, o.OAuthXmlNs, enc)
 				break
 			}
-			if m == "PLAIN" || m == 'SCRAM-SHA-1' {
+			if m == "PLAIN" || m == "SCRAM-SHA-1" {
 				mechanism = m
 				// Plain authentication: send base64-encoded \x00 user \x00 password.
 				raw := "\x00" + user + "\x00" + o.Password
